@@ -1,0 +1,23 @@
+h1. signal.lua
+
+Concepts from the as3-signals library by "Robert Penner":http://twitter.com/robpenner ported from ActionScript to Lua and Ansca's Corona SDK by "Josh Tynjala":http://twitter.com/joshtynjala.
+
+h2. Usage
+
+bc. local signal = require("signal")
+
+local function onSignalListener(message)
+	-- prints "signal says:   hello!  nil"
+	print("signal says:", message, self)
+end
+
+local myTable = {}
+function myTable:method(message)
+	-- prints "signal says:   hello!  table: ########"
+	print("signal says:", message, self)
+end
+
+local onSignal = signal.new()
+onSignal:add(onSignalListener) --no scope
+onSignal:add(myTable.method, myTable) --include scope
+onSignal:dispatch("hello!")
