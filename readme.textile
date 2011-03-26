@@ -4,16 +4,19 @@ Concepts from the as3-signals library by "Robert Penner":http://twitter.com/robp
 
 h2. Usage
 
-bc. local signal = require("signal")
+bc.. local signal = require("signal")
+
 local function onSignalListener(message)
 	-- prints "signal says:   hello!  nil"
 	print("signal says:", message, self)
 end
+
 local myTable = {}
 function myTable:method(message)
 	-- prints "signal says:   hello!  table: ########"
 	print("signal says:", message, self)
 end
+
 local onSignal = signal.new()
 onSignal:add(onSignalListener) --no scope
 onSignal:add(myTable.method, myTable) --include scope
