@@ -1,6 +1,6 @@
 h1. signal.lua
 
-A simple implementation of Signals for Lua and Ansca's Corona SDK by "Josh Tynjala":http://twitter.com/joshtynjala. Inspired by the ActionScript implementation by "Robert Penner":http://twitter.com/robpenner.
+A simple implementation of Signals for Lua and Ansca's Corona SDK by "Josh Tynjala":http://twitter.com/joshtynjala. Inspired by "as3-signals":https://github.com/robertpenner/as3-signals, the ActionScript implementation by "Robert Penner":http://twitter.com/robpenner.
 
 h2. Usage
 
