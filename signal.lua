@@ -48,6 +48,9 @@ function new()
 	signal.numListeners = 0
 
 	function signal:add(func, scope)
+		if func == nil then
+			error("Function passed to signal:add() must not non-nil.")
+		end
 		local listener = newListener(func, scope)
 		table.insert(listeners, listener)
 		self.numListeners = self.numListeners + 1
